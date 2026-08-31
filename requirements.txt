@@ -1,0 +1,5 @@
+torch
+numpy
+scipy
+scikit-learn
+neurobench==2.3.0

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and generated artifacts
+data/
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.zip
+
+# Challenge/private artifacts
+submission_code*
+verification_code*
+private/
+submissions/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
