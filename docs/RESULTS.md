@@ -1,8 +1,22 @@
 # Results
 
-This document records the internal validation progression used during the THOR × NeuroBench EEG motor-imagery project.
+This document records both the internal validation progression and the official Track 1 result for the THOR × NeuroBench EEG motor-imagery project.
 
-These values are **internal validation metrics only**. They must not be interpreted as an official THOR/NeuroBench leaderboard score or challenge placement.
+Internal validation metrics and official challenge metrics are kept separate.
+
+## Official challenge result
+
+**Track 1: Absolute Accuracy**
+
+| Metric | Official result |
+| --- | ---: |
+| Placement | **1st** |
+| Test accuracy | **73.38%** |
+| Weighted operations | **14.27M** |
+| Official baseline accuracy | 68.58% |
+| Official baseline weighted operations | 31.09M |
+
+The winning EdgeSynapse AI submission achieved **73.38% official test accuracy** and used **less than half the weighted operations of the official baseline**.
 
 ## Dataset contract
 
@@ -11,7 +25,7 @@ These values are **internal validation metrics only**. They must not be interpre
 - Input per trial: 250 time steps × 62 EEG channels
 - Task: binary left-hand vs right-hand motor imagery
 
-## Baseline progression
+## Internal baseline progression
 
 | Model / method | Internal validation accuracy | Interpretation |
 | --- | ---: | --- |
@@ -30,6 +44,8 @@ accuracy: 0.74131944
 ```
 
 The final package was evaluated after construction and re-loading rather than reporting only the in-memory training result.
+
+The internal clean-package validation accuracy (**74.13%**) and the official test accuracy (**73.38%**) differ by approximately **0.75 percentage points**.
 
 ## Champion-search design
 
@@ -56,4 +72,4 @@ The project deliberately separates:
 3. clean-package validation,
 4. official challenge evaluation.
 
-Only item 3 is reported as 74.13% in this repository. No claim is made about item 4.
+The **74.13%** result is the internal clean-package validation result. The **73.38%** result is the official Track 1 test accuracy used for the final challenge ranking.
