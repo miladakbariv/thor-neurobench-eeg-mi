@@ -1,15 +1,31 @@
-# THOR × NeuroBench 2026 — EEG Motor-Imagery Classification
+# THOR × NeuroBench 2026 - EEG Motor-Imagery Classification
 
 **Team:** EdgeSynapse AI  
-**Track:** Track 1 — Classification Accuracy  
+**Participant:** Milad Akbarivarmazyar  
+**Affiliation:** Johannes Kepler University Linz, Austria  
+**Track:** Track 1 - Absolute Accuracy  
 **Task:** Binary EEG motor-imagery classification  
 **Framework:** PyTorch + NeuroBench 2.3.0
 
-A portfolio-safe, reproducible engineering record of our THOR × NeuroBench Challenge 2026 work on decoding **left-hand vs right-hand motor imagery** from multi-channel EEG.
+## 🏆 Official Challenge Result
 
-This repository focuses on the technical workflow: baseline design, EEG-aware neural architectures, validation discipline, NeuroBench compatibility, clean-package verification, and responsible reporting of results.
+**1st Place - Track 1: Absolute Accuracy**
 
-> **Important:** all accuracy values in this repository are internal validation results. They are **not** presented as an official THOR/NeuroBench leaderboard score or final challenge placement.
+| Metric | Result |
+| --- | ---: |
+| Official test accuracy | **73.38%** |
+| Track 1 placement | **1st** |
+| Weighted operations | **14.27M** |
+| Official baseline accuracy | 68.58% |
+| Official baseline weighted operations | 31.09M |
+
+The winning submission achieved **73.38% official test accuracy while using less than half the weighted operations of the official baseline**.
+
+This repository is a portfolio-safe, reproducible engineering record of my THOR × NeuroBench Challenge 2026 work on decoding **left-hand vs right-hand motor imagery** from multi-channel EEG.
+
+It focuses on the technical workflow: baseline design, EEG-aware neural architectures, validation discipline, NeuroBench compatibility, clean-package verification, and responsible reporting of both internal and official results.
+
+> **Reporting note:** internal validation results and official challenge results are reported separately. The final clean-package validation accuracy was **74.13%**, while the official Track 1 test accuracy was **73.38%**.
 
 ## Problem
 
@@ -50,6 +66,8 @@ Final clean-package check:
 ```
 
 The final package was independently reloaded and evaluated after ZIP construction so that the reported validation result reflected the artifact intended for submission rather than only an in-memory training object.
+
+The close agreement between the internal clean-package result (**74.13%**) and the official test result (**73.38%**) also provides a useful post-hoc check on the validation and packaging process.
 
 ## Model Search
 
@@ -129,7 +147,7 @@ The checkpoint itself is not required to review the architecture or engineering 
 
 The project follows several rules that were important for the challenge and remain useful in normal ML engineering:
 
-1. Separate training, validation and unseen evaluation roles.
+1. Separate training, validation and official test evaluation roles.
 2. Keep official input/output contracts explicit.
 3. Use fixed seeds where deterministic comparison is required.
 4. Record model and preprocessing assumptions.
@@ -148,6 +166,7 @@ Included:
 - Model architecture definitions
 - NeuroBench benchmark adapter
 - Internal experiment summary
+- Official challenge result summary
 - Reproducibility documentation
 - Automated architecture smoke tests
 
@@ -167,7 +186,7 @@ Intentionally excluded:
 - Deep-learning model comparison
 - Reproducible validation
 - NeuroBench integration
-- Edge/neuromorphic benchmarking awareness
+- Efficiency-aware benchmarking
 - Submission packaging and artifact verification
 - Responsible technical communication
 
